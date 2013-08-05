@@ -16,7 +16,7 @@
     "url": "http://github.com/morphar"
   }],
   "dependencies": {
-    "extend-string": ">=0.0.1"
+    "extend-string": ">=0.0.2"
   },
   "repository": {
     "type": "git",

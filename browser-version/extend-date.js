@@ -1,4 +1,7 @@
-require('extend-string');
+String.prototype.parseTrueInt = function() {
+  var number = parseInt(String(this));
+  return (isNaN(number) ? 0 : number);
+};
 
 // Show a fuzzy timestamp between the current Date objects time and now or what you put in the first parameter
 Date.prototype.timeAgo = function(endtime, showshort) {
