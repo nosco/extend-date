@@ -1,0 +1,34 @@
+{
+  "name": "extend-date",
+  "version": "0.0.2",
+  "description": "Extend (prototype) the String object with new features like trim, camelCase, shorten, etc.",
+  "keywords":[
+    "extend",
+    "date",
+    "time",
+    "time ago",
+    "fuzzy timestamps"
+  ],
+  "author": "Dan Larsen",
+  "maintainers": [{
+    "name": "Dan Larsen",
+    "email": "dan@techba.se",
+    "url": "http://github.com/morphar"
+  }],
+  "dependencies": {
+    "extend-string": ">=0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/morphar/extend-date.git"
+  },
+  "github": "http://github.com/morphar/extend-date",
+  "bugs": {
+    "url": "http://github.com/morphar/extend-date/issues"
+  },
+  "license": "MIT",
+  "main": "./index.js",
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
