@@ -20,11 +20,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/morphar/extend-date.git"
+    "url": "http://github.com/nosco/extend-date.git"
   },
-  "github": "http://github.com/morphar/extend-date",
+  "github": "http://github.com/nosco/extend-date",
   "bugs": {
-    "url": "http://github.com/morphar/extend-date/issues"
+    "url": "http://github.com/nosco/extend-date/issues"
   },
   "license": "MIT",
   "main": "./index.js",
