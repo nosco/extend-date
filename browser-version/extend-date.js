@@ -3,12 +3,13 @@ String.prototype.parseTrueInt = function() {
   return (isNaN(number) ? 0 : number);
 };
 
+
 // Show a fuzzy timestamp between the current Date objects time and now or what you put in the first parameter
-Date.prototype.timeToGo = function(endtime, showshort) {
+Date.prototype.timeToGo = Date.prototype.timeAway = function(starttime, showshort) {
   var showshort = showshort || false;
 
   // Result in a positive value
-  var fuzzy = this.fuzzyTime(endtime);
+  var fuzzy = this.fuzzyTime(starttime);
 
   if(fuzzy.direction == 'past') {
     fuzzy.diff = -fuzzy.diff;
@@ -56,9 +57,9 @@ Date.prototype.fuzzyTimeDiff = function(compareTime) {
 
   var compareTime = (compareTime ? new Date(compareTime) : new Date());
 
-  var timediff = Math.floor((compareTime.getTime()) - (this.getTime()));
+  var timediff = Math.floor(this.getTime() - compareTime.getTime());
   if(timediff < 0) {
-    timediff = Math.floor((this.getTime()) - (compareTime.getTime()));
+    timediff = -timediff;
     returnObject.direction = 'past';
   }
 
@@ -208,17 +209,33 @@ var curDate = new Date();
 var pastDate = new Date().removeDays(2).removeMilliseconds(30);
 var futureDate = new Date().addDays(2).addMilliseconds(30);
 
-console.log(curDate.toUTCString());
-console.log(pastDate.toUTCString());
-console.log(futureDate.toUTCString());
+console.log('curDate:', curDate.toUTCString());
+console.log('pastDate:', pastDate.toUTCString());
+console.log('futureDate:', futureDate.toUTCString());
 
-console.log(curDate.getTime());
-console.log(pastDate.getTime());
-console.log(futureDate.getTime());
+console.log('');
 
-console.log('ago:', curDate.timeAgo(pastDate));
-console.log('ago:', curDate.timeAgo(futureDate));
+console.log('curDate:', curDate.getTime());
+console.log('pastDate:', pastDate.getTime());
+console.log('futureDate:', futureDate.getTime());
 
-console.log('to go:', curDate.timeToGo(pastDate));
-console.log('to go:', curDate.timeToGo(futureDate));
+console.log('');
+
+console.log('pastDate is ' + pastDate.timeAgo() + ' ago relative to now'); // Expect + result
+console.log('futureDate is ' + futureDate.timeAgo() + ' ago relative to now'); // Expect - result
+
+console.log('');
+
+console.log('pastDate is ' + pastDate.timeAway() + ' away relative to now'); // Expect - result
+console.log('futureDate is ' + futureDate.timeAway() + ' away relative to now'); // Expect + result
+
+console.log('');
+
+console.log('curDate is ' + curDate.timeAgo(pastDate) + ' ago relative to pastDate'); // Expect - result
+console.log('curDate is ' + curDate.timeAgo(futureDate) + ' ago relative to futureDate'); // Expect + result
+
+console.log('');
+
+console.log('curDate is ' + curDate.timeAway(pastDate) + ' away relative to pastDate'); // Expect + result
+console.log('curDate is ' + curDate.timeAway(futureDate) + ' away relative to futureDate'); // Expect - result
 */
