@@ -1,3 +1,5 @@
+[![NPM version](https://badge.fury.io/js/block-scope.png)](http://badge.fury.io/js/extend-date)
+
 # extend-date
 
 Extend (prototype) the Date object with new features - currently just timeAgo and add and remove seconds, hours, etc..
