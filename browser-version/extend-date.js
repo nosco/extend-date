@@ -103,7 +103,7 @@ Date.prototype.fuzzyTimeDiff = function(compareTime) {
 
   } else {
     returnObject.diff = timediff;
-    returnObject.unit = 'ms';
+    returnObject.unit = 'milliseconds';
     returnObject.unitShort = 'ms';
   }
 
@@ -111,7 +111,7 @@ Date.prototype.fuzzyTimeDiff = function(compareTime) {
     returnObject.unitShort = returnObject.unit;
   }
 
-  if(returnObject.diff != 1 && returnObject.unit != 'ms') {
+  if( (returnObject.diff < 1 || returnObject.diff >= 2) && returnObject.unit != 'milliseconds') {
     returnObject.unit += 's';
     returnObject.unitShort += 's';
   }
