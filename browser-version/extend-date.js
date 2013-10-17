@@ -111,7 +111,7 @@ Date.prototype.fuzzyTimeDiff = function(compareTime) {
     returnObject.unitShort = returnObject.unit;
   }
 
-  if( (returnObject.diff < 1 || returnObject.diff >= 2) && returnObject.unit != 'milliseconds') {
+  if( (returnObject.diff < 1 || returnObject.diff > 1) && returnObject.unit != 'milliseconds') {
     returnObject.unit += 's';
     returnObject.unitShort += 's';
   }
