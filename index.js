@@ -13,6 +13,7 @@ Date.prototype.timeToGo = Date.prototype.timeAway = function(starttime, showshor
 
   return fuzzy.diff + ' ' + (showshort ? fuzzy.unitShort : fuzzy.unit);
 };
+Object.defineProperty(Date.prototype, 'timeToGo', { enumerable: false });
 
 // Show a fuzzy timestamp between the current Date objects time and now or what you put in the first parameter
 Date.prototype.timeAgo = function(endtime, showshort) {
@@ -27,6 +28,7 @@ Date.prototype.timeAgo = function(endtime, showshort) {
 
   return fuzzy.diff + ' ' + (showshort ? fuzzy.unitShort : fuzzy.unit);
 };
+Object.defineProperty(Date.prototype, 'timeAgo', { enumerable: false });
 
 Date.prototype.fuzzyTime = function(endtime) {
   var endtime = (endtime ? new Date(endtime) : new Date());
@@ -38,6 +40,7 @@ Date.prototype.fuzzyTime = function(endtime) {
 
   return fuzzy;
 };
+Object.defineProperty(Date.prototype, 'fuzzyTime', { enumerable: false });
 
 // Get a fuzzy time object with the difference between the current Date objects time and now or what you put in the first parameter
 // The object will look something like this (always returns a positive value): { diff: 1, unitShort = 'sec', 'unit': 'second' }
@@ -114,90 +117,105 @@ Date.prototype.fuzzyTimeDiff = function(compareTime) {
 
   return returnObject;
 };
+Object.defineProperty(Date.prototype, 'fuzzyTimeDiff', { enumerable: false });
 
 Date.prototype.addMilliseconds = function(milliseconds) {
   milliseconds = String(milliseconds).parseTrueInt();
   this.setMilliseconds(this.getMilliseconds() + milliseconds);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addMilliseconds', { enumerable: false });
 
 Date.prototype.removeMilliseconds = function(milliseconds) {
   milliseconds = String(milliseconds).parseTrueInt();
   this.setMilliseconds(this.getMilliseconds() - milliseconds);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeMilliseconds', { enumerable: false });
 
 Date.prototype.addSeconds = function(seconds) {
   seconds = String(seconds).parseTrueInt();
   this.setSeconds(this.getSeconds() + seconds);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addSeconds', { enumerable: false });
 
 Date.prototype.removeSeconds = function(seconds) {
   seconds = String(seconds).parseTrueInt();
   this.setSeconds(this.getSeconds() - seconds);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeSeconds', { enumerable: false });
 
 Date.prototype.addMinutes = function(minutes) {
   minutes = String(minutes).parseTrueInt();
   this.setMinutes(this.getMinutes() + minutes);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addMinutes', { enumerable: false });
 
 Date.prototype.removeMinutes = function(minutes) {
   minutes = String(minutes).parseTrueInt();
   this.setMinutes(this.getMinutes() - minutes);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeMinutes', { enumerable: false });
 
 Date.prototype.addHours = function(hours) {
   hours = String(hours).parseTrueInt();
   this.setHours(this.getHours() + hours);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addHours', { enumerable: false });
 
 Date.prototype.removeHours = function(hours) {
   hours = String(hours).parseTrueInt();
   this.setHours(this.getHours() - hours);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeHours', { enumerable: false });
 
 Date.prototype.addDays = function(days) {
   days = String(days).parseTrueInt();
   this.setDate(this.getDate() + days);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addDays', { enumerable: false });
 
 Date.prototype.removeDays = function(days) {
   days = String(days).parseTrueInt();
   this.setDate(this.getDate() - days);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeDays', { enumerable: false });
 
 Date.prototype.addMonths = function(months) {
   months = String(months).parseTrueInt();
   this.setMonth(this.getMonth() + months);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addMonths', { enumerable: false });
 
 Date.prototype.removeMonths = function(months) {
   months = String(months).parseTrueInt();
   this.setMonth(this.getMonth() - months);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeMonths', { enumerable: false });
 
 Date.prototype.addYears = function(years) {
   years = String(years).parseTrueInt();
   this.setFullYear(this.getFullYear() + years);
   return this;
 };
+Object.defineProperty(Date.prototype, 'addYears', { enumerable: false });
 
 Date.prototype.removeYears = function(years) {
   years = String(years).parseTrueInt();
   this.setFullYear(this.getFullYear() - years);
   return this;
 };
+Object.defineProperty(Date.prototype, 'removeYears', { enumerable: false });
 
 
 /** @example
