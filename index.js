@@ -13,7 +13,8 @@ Date.prototype.timeToGo = Date.prototype.timeAway = function(starttime, showshor
 
   return fuzzy.diff + ' ' + (showshort ? fuzzy.unitShort : fuzzy.unit);
 };
-Object.defineProperty(Date.prototype, 'timeToGo', { enumerable: false });
+Object.defineProperty(Date.prototype, 'timeAgo', { enumerable: false });
+Object.defineProperty(Date.prototype, 'timeAway', { enumerable: false });
 
 // Show a fuzzy timestamp between the current Date objects time and now or what you put in the first parameter
 Date.prototype.timeAgo = function(endtime, showshort) {
